@@ -11,24 +11,24 @@ function Navigation({ isLoaded }){
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <ProfileButton user={sessionUser} />
+      <ProfileButton user={sessionUser}  />
     );
   } else {
     sessionLinks = (
       <>
-        <LoginFormModal />
+        <LoginFormModal  />
         <NavLink to="/signup">Sign Up</NavLink>
       </>
     );
   }
 
   return (
-    <ul>
-      <li>
-        <NavLink exact to="/">Home</NavLink>
-        {isLoaded && sessionLinks}
-      </li>
-    </ul>
+    <div className='navContainer'>
+          <NavLink exact to="/" className='home'>Home</NavLink>
+      <div className='loginsignup'>
+          {isLoaded && sessionLinks}
+          </div>
+    </div>
   );
 }
 
