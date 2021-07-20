@@ -1,103 +1,177 @@
 .container {
-    height: 1040px;
-    background-image: url(https://www.luokung.com/img/earth_bg.png);
-    background-color: initial;
+    box-sizing: border-box;
+	max-height: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+	background-image: url(./19609.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .header-box {
-    display: flex;
-    flex-direction: column;
-    height: 300px;
-    align-items: stretch;
+	display: flex;
+	flex-direction: column;
+	height: 320px;
+	align-items: stretch;
 }
 
 .title {
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    font-size: 40px;
-    height: 5px;
+	display: flex;
+	flex-direction: column;
+	align-self: center;
+	font-size: 40px;
+	height: 5px;
+    text-shadow: 0 0 10px blue;
 }
 
 .caption {
-    display: flex;
-    flex-direction: column;
-    height: 20px;
+	display: flex;
+	flex-direction: column;
+	height: 120px;
+    text-shadow: 0 0 10px blue;
 }
 
 .appText {
-    font-size: 18px;
-    padding: 4px 6px 3px 6px;
+	font-size: 16px;
+	padding: 4px 6px 3px 6px;
+    text-shadow: 0 0 10px blue;
 }
 
+
 .glow-on-hover {
-    width: 220px;
-    height: 50px;
-    border: none;
-    outline: none;
-    color: #fff;
-    background: #111;
-    cursor: pointer;
-    position: relative;
-    z-index: 0;
-    border-radius: 10px;
+    display: flex !important;
+    margin-top: auto;
+	width: 220px;
+	height: 40px;
+	border: none;
+	outline: none;
+	color: #fff;
+	background: #111;
+	cursor: pointer;
+	position: relative;
+	z-index: 0;
+	border-radius: 10px;
+
 }
 
 .glow-on-hover:before {
-    content: '';
-    background: linear-gradient(45deg, #ff0000,  #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-    position: absolute;
-    top: -2px;
-    left:-2px;
-    background-size: 400%;
-    z-index: -1;
-    filter: blur(5px);
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    animation: glowing 20s linear infinite;
-    opacity: 0;
-    transition: opacity .3s ease-in-out;
-    border-radius: 10px;
+	content: "";
+	background: linear-gradient(
+		45deg,
+		#ff0000,
+		#002bff,
+		#ff00c8,
+		#ff0000
+
+	);
+	position: absolute;
+	top: -2px;
+	left: -2px;
+	background-size: 400%;
+	z-index: -1;
+	filter: blur(5px);
+	width: calc(100% + 4px);
+	height: calc(100% + 4px);
+	animation: glowing 20s linear infinite;
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+	border-radius: 10px;
 }
 
 .glow-on-hover:active {
-    color: #fff
+	color: #fff;
 }
 
 .glow-on-hover:active:after {
-    background: transparent;
+	background: transparent;
 }
 
 .glow-on-hover:hover:before {
-    opacity: 1;
+	opacity: 1;
 }
 
 .glow-on-hover:after {
-    z-index: -1;
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #fff;
-    left: 0;
-    top: 0;
-    border-radius: 10px;
+	z-index: -1;
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	left: 0;
+	top: 0;
+	border-radius: 10px;
 }
 
 @keyframes glowing {
-    0% { background-position: 0 0; }
-    50% { background-position: 400% 0; }
-    100% { background-position: 0 0; }
+	0% {
+		background-position: 0 0;
+	}
+	50% {
+		background-position: 400% 0;
+	}
+	100% {
+		background-position: 0 0;
+	}
 }
 
 .footer {
-    max-width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: stretch;
+	max-width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: stretch;
+    margin-bottom: auto;
 }
 
-.column1, .column2, .column3 {
-    padding: 14px;
+.column1 .column2 .column3 {
+	display: flex;
+	padding: 14px;
+	width: 100%;
 }
+
+.trackingIcon,
+.crowdIcon {
+	display: flex;
+	max-height: 150px;
+	max-width: 150px;
+	padding: 10px;
+	align-self: center;
+
+}
+
+.musicIcon {
+    display: flex;
+	max-height: 140px;
+	max-width: 150px;
+	padding: 10px;
+	align-self: center;
+}
+
+.h1Caption {
+	display: flex;
+	justify-content: center;
+    text-shadow: 10px 10px 10px rgb(22, 22, 156);
+}
+
+.pTag {
+	display: flex;
+	justify-content: center;
+	max-width: 190px;
+	padding: 12px;
+    font-size: 18px;
+    text-shadow: 0 0 10px black;
+}
+
+/* .trackingIcon {
+    max-height: 150px;
+    max-width: 150px;
+    padding: 10px;
+
+}
+
+.crowdIcon {
+    max-height: 150px;
+    max-width: 150px;
+    padding: 10px;
+
+} */

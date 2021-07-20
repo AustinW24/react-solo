@@ -4,3 +4,9 @@
     padding: 0;
     font-family: 'Poppins', sans-serif;
 }
+
+.modalContainer {
+    max-height: 600px !important;
+    max-width: 200px;
+    background-color: yellow;
+}
