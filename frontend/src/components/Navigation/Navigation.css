@@ -17,10 +17,14 @@
 
 }
 
-.loginsignup {
+/* .loginsignup {
 	display: flex;
 	flex-direction: row;
 	margin-right: auto;
 	float: right;
 	justify-content: space-between;
+} */
+
+.signup {
+	margin: 50px;
 }

@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import './Navigation.css';
+import logo from './soundspace.png'
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector(state => state.session.user);
@@ -24,6 +25,9 @@ function Navigation({ isLoaded }) {
 
   return (
     <div className='navContainer'>
+      <div>
+        <img src='./soundspace.png'></img>
+      </div>
       < NavLink exact to="/" className='home'>Home</NavLink>
       <div className='login-signup'>
         {isLoaded && sessionLinks}
