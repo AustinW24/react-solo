@@ -28,7 +28,7 @@ const validateSignup = [
   ];
 
   router.post(
-    '/',
+    '/home',
     validateSignup,
     asyncHandler(async (req, res) => {
       const { email, password, username } = req.body;
@@ -41,6 +41,11 @@ const validateSignup = [
       });
     }),
   );
+
+  router.get('/home', asyncHandler(async function (_req, res) {
+    const users = await db.findAll();
+    res.json(users)
+}));
 
 
 
