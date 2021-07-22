@@ -2,11 +2,11 @@ import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux'
-
 import './Home.css'
 import { getSongs } from '../../store/songs'
+import { editSong } from '../../store/songs'
 import ProfileButton from '../Navigation/ProfileButton'
-
+import EditSongModal from './EditSongModal'
 
 
 function Home() {
@@ -14,31 +14,34 @@ function Home() {
     const dispatch = useDispatch();
 
     const songs = useSelector((state) => Object.values(state.songs))
-
     const sessionUser = useSelector(state => state.session.user);
 
-    const sessionLinks = (
-        <ProfileButton user={sessionUser} />
-    )
+    // const sessionLinks = (
+    //     <ProfileButton user={sessionUser} />
+    // )
 
     useEffect(() => {
         dispatch(getSongs())
     }, [dispatch])
 
+    useEffect(() => {
+        dispatch(editSong())
+    }, [dispatch])
+
     return (
         <div className='homeContainer'>
-            <NavLink className='homebutton' exact to='/'>home</NavLink>
-            <div className='singleUpload'>
-                {songs.map((song) =>
+            {songs.map((song) =>
+                <div className='imgText' key={song}>
+                    <img src={song.url} className='eachPhoto'></img>
+                    <div className='songText'>
+                    <p className='titleDuration'>{song.title} {song.duration}</p>
                     <div>
-                        <img src={song.url} className='eachPhoto'></img>
-                        <p className='songTitle'>{song.title}</p>
-                        <p className='duration'>{song.duration}</p>
+                        <EditSongModal />
                     </div>
-                )}
-            </div>
+                    </div>
+                </div>
 
-
+            )}
         </div>
 
     )

@@ -11,9 +11,22 @@ router.get('/home', asyncHandler(async function (req, res) {
     res.json(songs);
 }));
 
+router.put('/:id/edit', asyncHandler(async function (req, res) {
+    const songs = await Song.findAll();
+    console.log('songsssss', songs)
+    res.json(songs);
+}));
 
-router.delete(`/delete/:id`, asyncHandler(async function (req, res) {
-    const songId = await songRepository.removeSong(req.params.id);
+
+router.post('/:id/edit', asyncHandler(async function (req, res) {
+    const songs = await Song.findAll();
+    console.log('songsssss', songs)
+    res.json(songs);
+}));
+
+
+router.delete(`/:id/edit`, asyncHandler(async function (req, res) {
+    const songId = await Song.findOne({where: {}});
     return res.json({ songId });
 }));
 
