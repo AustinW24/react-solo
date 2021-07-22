@@ -3,13 +3,14 @@ const asyncHandler = require("express-async-handler");
 const router = express.Router();
 const { requireAuth } = require('../../utils/auth');
 const { Song } = require('../../db/models/song');
-const { removeSong, listSong } = require( '../../db/songRepository');
+ const listSongs = require( './songRepository');
 
 
 router.get('/home', asyncHandler(async function (req, res) {
-    const songs = await songRepository.listSong();
-    return res.json(songs)
-
+    console.log('HELLOOOOO')
+    const allSongs =  await Songs.findAll();
+    console.log(allSongs)
+    return res.json(allSongs)
 }));
 
 

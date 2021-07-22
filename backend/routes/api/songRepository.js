@@ -1,6 +1,6 @@
 import { Songs } from '../models/song'
 
-async function removeSong(songId) {
+  async function removeSong(songId) {
     const song = await Item.findByPk(itemId);
     if (!song) throw new Error('Cannot find song');
 
