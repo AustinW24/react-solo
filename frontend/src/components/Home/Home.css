@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+    box-sizing: border-box;
+	max-height: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.homeContainer {
+    background-image: url(https://c1.wallpaperflare.com/preview/240/47/637/the-milky-way-starry-sky-stars-night-view-lockscreen-wallpaper.jpg);
+}
+
+.recordImg {
+    max-inline-size: 30px;
+    padding-top: 20px;
+    position: relative;
+}
+
+.latestText {
+    font-family: Helvetica, sans-serif;
+    display: flex;
+}
+
+.uploadContainer {
+    border: 5px dotted red;
+    height: 160px;
+}
