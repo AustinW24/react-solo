@@ -1,29 +1,44 @@
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { NavLink, Route, useParams } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux'
+
 import './Home.css'
+import { getSongs } from '../../store/songs'
+import ProfileButton from '../Navigation/ProfileButton'
+
+
 
 function Home() {
 
-    // const songs = useSelector(state => {
-    //     return state.songs.list.map(songId => state.songs[songId]);
-    //   });
+    const dispatch = useDispatch();
+
+    const songs = useSelector((state) => Object.values(state.songs))
+
+    const sessionUser = useSelector(state => state.session.user);
+
+    const sessionLinks = (
+        <ProfileButton user={sessionUser} />
+    )
+
+    useEffect(() => {
+        dispatch(getSongs())
+    }, [dispatch])
 
     return (
         <div className='homeContainer'>
-            <script src="https://connect.soundcloud.com/sdk/sdk-3.3.2.js"></script>
-            <script>
-                {SC.initialize({
-                    client_id: 'YOUR_CLIENT_ID',
-                redirect_uri: 'https://example.com/callback'
-  })};
-            </script>
-            <div className='latestDiv'>
-                <img className='recordImg' src='https://s3.cointelegraph.com/storage/uploads/view/12aaeaf78ca47c94da141ef52c84e485.png'></img>
-                <h1 className='latestText'>Latest from people you follow</h1>
+            <NavLink className='homebutton' exact to='/'>home</NavLink>
+            <div className='singleUpload'>
+                {songs.map((song) =>
+                    <div>
+                        <img src={song.url} className='eachPhoto'></img>
+                        <p className='songTitle'>{song.title}</p>
+                        <p className='duration'>{song.duration}</p>
+                    </div>
+                )}
             </div>
-            <div className='uploadContainer'></div>
+
+
         </div>
 
     )

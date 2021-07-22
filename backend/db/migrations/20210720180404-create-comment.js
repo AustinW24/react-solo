@@ -15,10 +15,13 @@ module.exports = {
       songId: {
         type: Sequelize.INTEGER,
         allowNull: false,
+        references: {model: 'Songs'}
+
       },
       userId: {
         type: Sequelize.INTEGER,
         allowNull: false,
+        references: {model: 'Users'}
       },
       createdAt: {
         allowNull: false,

@@ -28,7 +28,7 @@ function Navigation({ isLoaded }) {
       <div>
         <img src='./soundspace.png'></img>
       </div>
-      < NavLink exact to="/" className='home'>Home</NavLink>
+      < NavLink exact to="/home" className='home'>Home</NavLink>
       <div className='login-signup'>
         {isLoaded && sessionLinks}
       </div>

@@ -1,18 +1,29 @@
-* {
+/* * {
     box-sizing: border-box;
-    box-sizing: border-box;
+    /* box-sizing: border-box;
 	max-height: 100%;
     max-width: 100%;
-    margin: 0 auto;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
+    margin: 0 auto; */
+	/* background-repeat: no-repeat;
+	background-size: cover; */
+
 
 .homeContainer {
     background-image: url(https://c1.wallpaperflare.com/preview/240/47/637/the-milky-way-starry-sky-stars-night-view-lockscreen-wallpaper.jpg);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    /* margin: 0;
+    padding: 0; */
+    position: fixed;
+
 }
 
-.recordImg {
+/* .recordImg {
     max-inline-size: 30px;
     padding-top: 20px;
     position: relative;
@@ -24,6 +35,45 @@
 }
 
 .uploadContainer {
-    border: 5px dotted red;
-    height: 160px;
+
+    height: 300px;
+    border: 5px solid blue;
+
+} */
+
+.singleUpload {
+    border: 10px magenta solid;
+    position: fixed;
+    margin: 50px;
+    margin-left: 250px;
+    /* padding: 30px; */
+    top: 500px;
+    bottom: 150px;
+    height: 250px;
+    overflow: auto;
+    width: 65%;
+
 }
+
+.eachPhoto {
+    /* border: 5px limegreen solid; */
+    margin: 25px;
+    bottom: 100px;
+    left: 8.5%;
+    right: 8.5%;
+    height: 150px;
+    width: 250px;
+    background-size: 100% 100%;
+
+}
+
+.homebttn {
+
+    border: 5px solid red;
+}
+
+.songTitle {
+    width: 100%;
+}
+
+/* https://s3.cointelegraph.com/storage/uploads/view/12aaeaf78ca47c94da141ef52c84e485.png */

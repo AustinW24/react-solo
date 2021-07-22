@@ -10,10 +10,8 @@ module.exports = {
       },
       userId: {
         type: Sequelize.INTEGER,
-        allowNull: false
-      },
-      albumId: {
-        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {model: 'Users'}
       },
       title: {
         type: Sequelize.STRING(100),

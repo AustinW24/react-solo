@@ -2,18 +2,17 @@ const express = require("express");
 const asyncHandler = require("express-async-handler");
 const router = express.Router();
 const { requireAuth } = require('../../utils/auth');
-const { Song } = require('../../db/models/song');
-const { removeSong, listSong } = require( '../../db/songRepository');
+const { Song } = require('../../db/models');
 
 
 router.get('/home', asyncHandler(async function (req, res) {
-    const songs = await songRepository.listSong();
-    return res.json(songs)
-
+    const songs = await Song.findAll();
+    console.log('songsssss', songs)
+    res.json(songs);
 }));
 
 
-router.delete(`delete/:id`, asyncHandler(async function (req, res) {
+router.delete(`/delete/:id`, asyncHandler(async function (req, res) {
     const songId = await songRepository.removeSong(req.params.id);
     return res.json({ songId });
 }));
@@ -27,7 +26,6 @@ router.post(
         const song = await db.Song.build({
             userId,
             title,
-            albumId,
             url,
             duration
         })

@@ -1,33 +1,28 @@
 export const LOAD_SONG = "song/LOAD_ALBUM";
 export const REMOVE_SONG = "song/REMOVE_ITEM";
-export const UPDATE_SONG = "song/UPDATE_SONG";
 export const ADD_SONG = "song/ADD_ALBUM";
 
-const load = (songId) => ({
+const load = (songs) => ({
     type: LOAD_SONG,
-    songId
+    songs
   });
 
-  const update = (songId) => ({
-    type: UPDATE_SONG,
-    songId
-  });
 
-  const add = (songId) => ({
+  const add = (song) => ({
     type: ADD_SONG,
-    songId
+    song
   });
 
-  const remove = (songId) => ({
+  const remove = (song) => ({
     type: REMOVE_SONG,
-    songId,
+    song,
   });
 
-  export const fetchSong = (id) => async (dispatch) => {
-    const res = await fetch(`/api/songs/${id}`);
+  export const getSongs = () => async (dispatch) => {
+    const res = await fetch('/api/songs/home');
     if (res.ok) {
-      const song = await res.json();
-      dispatch(load(id));
+      const songs = await res.json();
+      dispatch(load(songs));
     }
   };
 
@@ -37,13 +32,9 @@ const load = (songId) => ({
   const songsReducer = (state = initialState, action) => {
     switch (action.type) {
       case LOAD_SONG: {
-        const newSong = {};
-        action.albums.forEach((song) => {
-          newSong[song.id] = song;
-        });
         return {
           ...state,
-          ...newSong,
+          ...Object.fromEntries(action.songs.map((song) => [song.id, song]))
         };
       }
       case REMOVE_SONG: {
@@ -54,12 +45,7 @@ const load = (songId) => ({
       case ADD_SONG:
         const newState = { ...state };
             newState = newState[action.songId]
-      case UPDATE_SONG: {
-        return {
-          ...state,
-          [action.song.id]: action.song,
-        };
-      }
+
       default:
         return state;
     }
