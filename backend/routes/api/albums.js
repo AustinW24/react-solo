@@ -2,11 +2,12 @@ const express = require("express");
 const asyncHandler = require("express-async-handler");
 const router = express.Router();
 const { requireAuth } = require('../../utils/auth');
+const { Album } = require('../../db/models/album');
 
 
 router.delete("/delete/:id", requireAuth, asyncHandler(async function (req, res) {
-    const { title, userId, imageUrl } = req.body;
-    const deleted = await db.Album.destroy()
+    const albumId = await Album.remove(req.params.id)
+    return res.json({ albumId})
 }));
 
 
@@ -25,3 +26,8 @@ router.post(
         return res.json({album})
     })
 );
+
+router.get('/home', asyncHandler(async function (_req, res) {
+    const albums = await Album.findAll();
+    res.json(songs)
+}));

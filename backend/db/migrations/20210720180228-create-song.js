@@ -14,7 +14,6 @@ module.exports = {
       },
       albumId: {
         type: Sequelize.INTEGER,
-        allowNull: false
       },
       title: {
         type: Sequelize.STRING(100),
@@ -25,7 +24,7 @@ module.exports = {
         allowNull: false,
       },
       duration: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING(20)
       },
       createdAt: {
         allowNull: false,
