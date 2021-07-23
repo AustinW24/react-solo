@@ -4,11 +4,8 @@
 .homeContainer {
     box-sizing: border-box;
     background-image: url(https://c1.wallpaperflare.com/preview/240/47/637/the-milky-way-starry-sky-stars-night-view-lockscreen-wallpaper.jpg);
-    height: 100vh;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-   
-
 }
 
 .eachPhoto {
@@ -16,29 +13,33 @@
     border: 5px white;
     margin: 25px;
     height: 150px;
-    width: 220px;
+    width: 180px;
     box-shadow: 5px 5px 10px 0px #000000;
+    border: 5px solid red;
     /* background-size: 100% 100%; */
 }
 
-.homebttn {
-    border: 5px solid red;
-}
 
 .imgText {
+    border: 5px solid red;
     display: flex;
     align-content: flex-start;
     margin: 10px;
+    align-items: flex-start;
 }
 
 .songText {
-    border: 5px solid orange;
+    border: 5px solid red;
     width: 650px;
+    align-self: flex-start;
     height: 20px;
-    justify-content: space-between;
+    position:flex-start;
+
 }
 
-
+.titleDuration {
+border: 5px solid red;
+}
 
 
 /* .duration {

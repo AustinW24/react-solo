@@ -3,4 +3,27 @@
     margin: auto;
     padding: 0;
     font-family: 'Poppins', sans-serif;
+
 }
+
+.form {
+    display: flex;
+    position: fixed;
+    top: 0;
+    border: 5px solid red;
+    display: flex;
+    align-items: center;
+    /* width: 200vh; */
+    height: 100vh;
+    background: rgb(238, 180, 180) 0.5;
+    justify-content: center;
+}
+
+/* .input-field{
+    background-color: #eee;
+      border: none;
+      padding: 12px 15px;
+      margin: 8px 0;
+      width: 30%;
+    margin-left: 10%;
+  } */

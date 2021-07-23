@@ -25,11 +25,10 @@ function Navigation({ isLoaded }) {
 
   return (
     <div className='navContainer'>
-      <div>
-        <img src='./soundspace.png'></img>
-      </div>
+      <img className='logo' src='https://thumbs.dreamstime.com/b/ss-logo-s-s-design-white-ss-letter-ss-s-s-letter-logo-design-initial-letter-ss-linked-circle-uppercase-monogram-logo-ss-logo-s-s-196993582.jpg'></img>
+
+      <div className='navLinks'>
       < NavLink exact to="/home" className='home'>Home</NavLink>
-      <div className='login-signup'>
         {isLoaded && sessionLinks}
       </div>
     </div>

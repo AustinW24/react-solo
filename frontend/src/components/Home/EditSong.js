@@ -5,10 +5,20 @@ import './EditSong.css';
 import EditSongModal from './EditSongModal'
 import {editSong} from '../../store/songs'
 
+
 function EditSong() {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
+  const [url, setUrl] = useState('');
+  const [duration, setDuration] = useState('');
   const sessionUser = useSelector(state => state.session.user);
+
+const reset = () => {
+  setTitle('');
+  setUrl('');
+  setDuration('')
+}
+
 
   let titleLinks;
   if (sessionUser) {
@@ -18,16 +28,27 @@ function EditSong() {
       </>
     );
   }
+
+
     const handleSubmit = (e) => {
       e.preventDefault();
-      return dispatch(editSong())
+      const newSong = {
+        title: title,
+        url,
+        duration
+      }
+
+      dispatch(editSong(newSong))
+      reset()
     };
+
+
 
     return (
       <div className='songModalContainer'>
         <form onSubmit={handleSubmit}>
           <label>
-            Track Title
+            Track Title: {' '}
             <input
               type="text"
               value={title}
@@ -35,7 +56,7 @@ function EditSong() {
               required
             />
           </label>
-          <button type="submit">Confirm Change</button>
+          <a type="submit" className='confirm' href='/home' onClick={(e) => setTitle(e.target.value)}>{' '}Confirm Change</a>
         </form >
       </div>
     );

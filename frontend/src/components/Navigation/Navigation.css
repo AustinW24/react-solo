@@ -3,28 +3,38 @@
 }
 
 .navContainer {
-	height: 55px;
-	background: rgb(35, 35, 59);
-	background: linear-gradient(
-		0deg,
-		rgba(35, 35, 59, 1) 0%,
-		rgba(22, 22, 25, 1) 5%,
-		rgba(0, 0, 0, 1) 23%
-	);
 	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+	height: 60px;
+	background: rgb(0, 0, 0);
+	border: 10px ;
+	/* justify-content: space-between; */
+
+
 
 }
 
-/* .loginsignup {
+.logo {
+	height:  30px;
+	width: 60px;
+	min-height: 60px;
+	min-width: 100px;
 	display: flex;
-	flex-direction: row;
-	margin-right: auto;
-	float: right;
-	justify-content: space-between;
-} */
+	display:-webkit-flex;
+    display:flex;
+    list-style-type:none;
+    padding:0;
+    justify-content:flex-end;
 
-.signup {
-	margin: 50px;
+}
+
+login-signup {
+	border: 5px solid blue;
+}
+
+.navLinks {
+	display: flex;
+	border: 3px solid red;
+	width: 200px;
+	height: 40px;
+
 }

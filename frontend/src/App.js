@@ -6,7 +6,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import LandingPage from "./components/LandingPage";
 import Home from "./components/Home";
-
+import EditSongModal from "./components/Home";
 
 function App() {
   const dispatch = useDispatch();
@@ -25,7 +25,6 @@ function App() {
           </Route>
           <Route path="/home">
             <Home />
-            <Navigation />
           </Route>
           <Route path="/signup">
             <SignupFormPage />

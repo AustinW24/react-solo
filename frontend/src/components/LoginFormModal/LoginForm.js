@@ -30,7 +30,7 @@ function LoginForm() {
         </ul>
         <label>
           Username or Email
-          <input
+          <input className='input-field'
             type="text"
             value={credential}
             onChange={(e) => setCredential(e.target.value)}

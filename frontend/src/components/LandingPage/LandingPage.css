@@ -27,6 +27,7 @@
 .caption {
 	display: flex;
 	flex-direction: column;
+	font-family: "Helvetica Neue";
 	height: 120px;
     text-shadow: 0 0 10px blue;
 }
@@ -35,6 +36,7 @@
 	font-size: 16px;
 	padding: 4px 6px 3px 6px;
     text-shadow: 0 0 10px blue;
+	font-family: 'Book Antiqua';
 }
 
 
