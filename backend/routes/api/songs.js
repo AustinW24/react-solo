@@ -11,6 +11,29 @@ router.get('/home', asyncHandler(async function (req, res) {
     res.json(songs);
 }));
 
+router.get('/upload', asyncHandler(async function (req, res) {
+    const songs = await Song.findAll();
+    console.log('songsssss', songs)
+    res.json(songs);
+}));
+
+router.post(
+    '/upload', requireAuth,
+    asyncHandler(async function (req, res, next) {
+        const { title, userId, url, duration } = req.body;
+
+        const song = await db.Song.build({
+            userId,
+            title,
+            url,
+            duration
+        })
+        await song.save();
+
+        return res.json({song})
+    })
+);
+
 router.put('/:id/edit', asyncHandler(async function (req, res) {
     const songs = await Song.findAll();
     console.log('songsssss', songs)

@@ -47,7 +47,7 @@ const reset = () => {
     return (
       <div className='songModalContainer'>
         <form onSubmit={handleSubmit}>
-          <label>
+          <label className='trackTitle'>
             Track Title: {' '}
             <input
               type="text"
@@ -56,7 +56,7 @@ const reset = () => {
               required
             />
           </label>
-          <a type="submit" className='confirm' href='/home' onClick={(e) => setTitle(e.target.value)}>{' '}Confirm Change</a>
+          <a type="submit" className='confirm' href='/home' onClick={(e) => setTitle(e.target.value)}>{'   '}Confirm Change</a>
         </form >
       </div>
     );

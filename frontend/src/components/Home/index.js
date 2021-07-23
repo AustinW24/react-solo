@@ -24,7 +24,9 @@ function Home() {
 
 
     return (
+
         <div className='homeContainer'>
+            <a className='upload' href='/upload'><button>Upload</button></a>
             {songs.map((song) =>
                 <div className='imgText' key={song.id}>
                     <img src={song.url} className='eachPhoto'></img>

@@ -42,11 +42,10 @@
 
 .glow-on-hover {
     display: flex !important;
+	align-self: flex-start;
     margin-top: auto;
 	width: 220px;
 	height: 40px;
-	border: none;
-	outline: none;
 	color: #fff;
 	background: #111;
 	cursor: pointer;
@@ -60,10 +59,10 @@
 	content: "";
 	background: linear-gradient(
 		45deg,
-		#ff0000,
-		#002bff,
-		#ff00c8,
-		#ff0000
+		#24b8c5,
+		#f0f0f0,
+		#102dd1,
+		#008cff
 
 	);
 	position: absolute;

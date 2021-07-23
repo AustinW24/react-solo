@@ -32,18 +32,20 @@ export const getSongs = () => async (dispatch) => {
   }
 };
 
+
 export const addSong = (song) => async (dispatch) => {
-  const response = await fetch(`/api/songs/homet`, {
+  const response = await fetch(`/api/songs/upload`, {
     method: 'POST',
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(song)
   })
   if (response.ok) {
-    const updatedSong = await response.json();
-    dispatch(add(updatedSong));
-    return updatedSong
+    const newSong = await response.json();
+    dispatch(add(newSong));
+    return newSong
   }
 }
+
 
 export const editSong = (song) => async (dispatch) => {
   const response = await fetch(`/api/${song.id}/edit`, {
@@ -75,9 +77,12 @@ const songsReducer = (state = initialState, action) => {
       return newState;
     }
     case ADD_SONG: {
-      return {
-      ...state,
-      [action.song.id]: action.song
+      if (!state[action.song.id]) {
+        const newState = {
+          ...state,
+          [action.song.id]: action.song,
+        };
+        return newState;
       }
     }
     case EDIT_SONG: {
@@ -86,8 +91,8 @@ const songsReducer = (state = initialState, action) => {
         [action.song.id]: action.song
       };
     }
-      default:
-return state;
+    default:
+      return state;
 
   };
 };
