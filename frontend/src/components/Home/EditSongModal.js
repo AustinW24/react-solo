@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useSelector } from 'react-redux'
 import EditSong from './EditSong';
 import { Modal } from '../../context/Modal';
 import './EditSong.css'

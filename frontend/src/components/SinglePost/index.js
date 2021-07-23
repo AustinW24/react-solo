@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom'
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import './SinglePost.css'
 import { removeSong, getSong, editSong } from '../../store/songs'
@@ -18,7 +17,8 @@ useEffect(() => {
 
     return (
         <div className="singleContainer">
-                    <h1>HELLO</h1>
+                    {<div>Hola</div>}
+                    
         </div>
 
     )

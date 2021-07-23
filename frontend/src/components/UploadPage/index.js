@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import ProfileButton from '../Navigation/ProfileButton';
-import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
 import './UploadPage.css'
-import { addSong } from '../../store/songs'
+
 
 const UploadPage = () => {
 

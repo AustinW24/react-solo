@@ -47,7 +47,7 @@ function LoginForm() {
             required
           />
         </label>
-        <a><button type="submit" href='/home'>Log In</button></a>
+        <a type="submit" href='/home'>Log In</a>
       </form >
     </div>
   );

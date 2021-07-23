@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
 import './LandingPage.css'
-import ProfileButton from '../Navigation/ProfileButton';
-import LoginFormModal from '../LoginFormModal';
-
 
 function LandingPage() {
 
@@ -26,14 +23,14 @@ function LandingPage() {
                 </div>
                 <div className='column2'>
                     <div>
-                        <img className='trackingIcon' src='https://www.pinclipart.com/picdir/big/114-1145325_5-tracking-icon-courier-tracking-icon-clipart.png'></img>
+                        <img alt='magnify glass' className='trackingIcon' src='https://www.pinclipart.com/picdir/big/114-1145325_5-tracking-icon-courier-tracking-icon-clipart.png'></img>
                         <h1 className='h1Caption'>Track your listens</h1>
                         <p className='pTag'>Keep track of every song or album you've played with our built-in favorite's list</p>
                     </div>
                 </div>
                 <div className='column3'>
                     <div>
-                        <img className='crowdIcon' src='https://icon-library.com/images/crowd-icon-png/crowd-icon-png-16.jpg'></img>
+                        <img alt='crowd of people' className='crowdIcon' src='https://icon-library.com/images/crowd-icon-png/crowd-icon-png-16.jpg'></img>
                         <h1 className='h1Caption'>Join over 2 million</h1>
                         <p className='pTag'>Connect with 2 million people around the world who share similar interests</p>
                     </div>

@@ -10,20 +10,38 @@ router.get('/home', asyncHandler(async function (req, res) {
     res.json(songs);
 }));
 
-router.get('/upload', asyncHandler(async function (req, res) {
-    const songs = await Song.findAll();
+// router.get('/upload', asyncHandler(async function (req, res) {
+//     const songs = await Song.findAll();
 
+//     res.json(songs);
+// }));
+
+router.get('/', asyncHandler(async function (req, res) {
+    const songs = await Song.findAll();
     res.json(songs);
 }));
 
+// router.get('/upload', asyncHandler(async function (req, res) {
+//     const songs = await Song.findAll();
+
+//     res.json(songs);
+// }));
+
+router.get('/:id/delete', asyncHandler(async function (req, res) {
+    const id = req.params.id;
+    const songId = Number(id);
+    const song = await Song.findById(songId);
+    return res.json(songId)
+
+}));
 
 router.post('/:id/delete', asyncHandler(async function (req, res) {
     console.log('HITTING')
-    const Id = req.params.id;
+    const id = req.params.id;
     const songId = Number(id);
     const song = await Song.findByPk(songId);
-    return res.json(song)
-
+    await song.destroy();
+    return res.json({song})
 }));
 
 
