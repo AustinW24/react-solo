@@ -16,6 +16,7 @@ function LoginForm() {
       async (res) => {
         const data = await res.json();
         if (data && data.errors) setErrors(data.errors);
+
       }
     );
   };
@@ -46,7 +47,7 @@ function LoginForm() {
             required
           />
         </label>
-        <button type="submit">Log In</button>
+        <a><button type="submit" href='/home'>Log In</button></a>
       </form >
     </div>
   );

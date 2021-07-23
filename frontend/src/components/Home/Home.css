@@ -27,19 +27,22 @@
 }
 
 .songText {
-    border: 5px solid red;
+    display: flex;
+    border: 2px solid red;
     width: 650px;
-    align-self: flex-start;
-    height: 20px;
-    position:flex-start;
+    justify-content:flex-start;
 
 }
 
 .titleDuration {
-border: 5px solid red;
+    display: flex;
+border: 2px solid red;
+justify-items: flex-start;
 }
 
-
+.editTitle {
+    border: red 2px solid
+}
 /* .duration {
     float: right;
     margin-right: 50px

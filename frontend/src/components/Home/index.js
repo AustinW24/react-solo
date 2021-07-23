@@ -3,8 +3,7 @@ import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux'
 import './Home.css'
-import { getSongs } from '../../store/songs'
-import ProfileButton from '../Navigation/ProfileButton'
+import { getSongs, editSong } from '../../store/songs'
 import EditSongModal from './EditSongModal'
 
 
@@ -15,6 +14,7 @@ function Home() {
     const songs = useSelector((state) => Object.values(state.songs))
     const sessionUser = useSelector(state => state.session.user);
 
+    const[title, setTitle] = useState('')
 
     useEffect(() => {
         dispatch(getSongs(songs))
@@ -22,6 +22,9 @@ function Home() {
     }, [dispatch])
 
 
+    useEffect(() => {
+        dispatch(editSong(songs))
+    }, [dispatch])
 
     return (
 
@@ -30,13 +33,12 @@ function Home() {
             {songs.map((song) =>
                 <div className='imgText' key={song.id}>
                     <img src={song.url} className='eachPhoto'></img>
+                    <NavLink to={`${song.id}/delete`} className=''>x</NavLink>
                     <div className='songText'>
                     <p className='titleDuration'>{song.title} {song.duration.slice(0,1) + ':' + song.duration.slice(1,3)}</p>
-                        <EditSongModal songs={songs} />
+                        <EditSongModal  song={song} />
                     </div>
-
                 </div>
-
             )}
         </div>
     )

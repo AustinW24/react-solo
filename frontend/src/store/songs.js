@@ -48,7 +48,8 @@ export const addSong = (song) => async (dispatch) => {
 
 
 export const editSong = (song) => async (dispatch) => {
-  const response = await fetch(`/api/${song.id}/edit`, {
+  console.log('*************************************************', song);
+  const response = await fetch(`/api/songs/${song.id}`, {
     method: 'PUT',
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(song)
@@ -60,11 +61,30 @@ export const editSong = (song) => async (dispatch) => {
   }
 }
 
+export const removeSong = (song) => async (dispatch) => {
+  const response = await fetch(`api/${song.id}/delete`, {
+    method: 'DELETE',
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(song)
+  })
+  if (response.ok) {
+    const deletedSong = await response.json();
+    dispatch(remove(deletedSong));
+    return deletedSong
+  }
+}
+
 
 const initialState = {};
 
 const songsReducer = (state = initialState, action) => {
   switch (action.type) {
+    case EDIT_SONG: {
+      return {
+        ...state,
+        [action.song.id]: action.song
+      };
+    }
     case LOAD_SONG: {
       return {
         ...state,
@@ -85,12 +105,7 @@ const songsReducer = (state = initialState, action) => {
         return newState;
       }
     }
-    case EDIT_SONG: {
-      return {
-        ...state,
-        [action.song.id]: action.song
-      };
-    }
+
     default:
       return state;
 

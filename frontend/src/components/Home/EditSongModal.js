@@ -1,18 +1,20 @@
 import React, { useState } from "react";
+import { useSelector } from 'react-redux'
 import EditSong from './EditSong';
 import { Modal } from '../../context/Modal';
 import './EditSong.css'
 
 
-function EditSongModal() {
+
+function EditSongModal({song}) {
     const [showModal, setShowModal] = useState(false);
 
     return (
         <>
-            <a onClick={() => setShowModal(true)}>Edit Title</a>
+            <a className='editTitle' onClick={() => setShowModal(true)}>Edit Title</a>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
-                    <EditSong  />
+                    <EditSong setShowModal={setShowModal}song={song} />
                 </Modal>
             )}
         </>
