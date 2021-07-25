@@ -13,6 +13,20 @@
     max-width: 200px;
     background-color: white;
 }
+
+.signIn {
+    padding: 4px;
+    width: 65px;
+    border-radius: 3px;
+    background-color: black;
+}
+
+.signIn:hover {
+    cursor: pointer;
+    border: 1px solid rgb(105, 102, 102);
+    background-color:rgb(53, 52, 52)
+}
+
 /* .input-field {
 background-color: #eee;
 border: none;

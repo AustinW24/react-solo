@@ -25,9 +25,10 @@ function Home() {
             {songs.map((song) =>
                 <div className='imgText' key={song.id}>
                     <img src={song.url} className='eachPhoto' alt='song-art'></img>
-                    <NavLink to={`${song.id}/delete`} className=''>x</NavLink>
+
+                    <NavLink to={`${song.id}/delete`} className=''><img className='bin' src='https://previews.123rf.com/images/esfirse/esfirse1812/esfirse181200156/115299132-cross-sign-red-x-icon-isolated-on-white-background-circle-symbol.jpg'></img></NavLink>
                     <div className='songText'>
-                    <p className='titleDuration'>{song.title} {song.duration.slice(0,1) + ':' + song.duration.slice(1,3)}</p>
+                    <p className='titleDuration'>{song.title} </p>
                         <EditSongModal  song={song} />
                     </div>
                 </div>

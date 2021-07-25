@@ -18,18 +18,21 @@ function Navigation({ isLoaded }) {
     sessionLinks = (
       <>
         <LoginFormModal />
-        <NavLink className='signup' to="/signup">Sign Up</NavLink>
+        <NavLink className='signup' to="/signup"><button className='createAccount'>Create account</button></NavLink>
       </>
     );
   }
 
   return (
     <div className='navContainer'>
-      <img className='logo' src='https://thumbs.dreamstime.com/b/ss-logo-s-s-design-white-ss-letter-ss-s-s-letter-logo-design-initial-letter-ss-linked-circle-uppercase-monogram-logo-ss-logo-s-s-196993582.jpg'></img>
+
+      <img className='logo' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS3-iR8wiDc8Gyx5EBgp9WZMnd_HQjcadf-e6NxZ_0lcC5thPULltrZ7PeNMwmoX-AVsc&usqp=CAU'></img>
 
       <div className='navLinks'>
       < NavLink exact to="/home" className='home'>Home</NavLink>
+      <div className='signup-login'>
         {isLoaded && sessionLinks}
+        </div>
       </div>
     </div>
   );

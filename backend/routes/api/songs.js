@@ -10,11 +10,6 @@ router.get('/home', asyncHandler(async function (req, res) {
     res.json(songs);
 }));
 
-// router.get('/upload', asyncHandler(async function (req, res) {
-//     const songs = await Song.findAll();
-
-//     res.json(songs);
-// }));
 
 router.get('/', asyncHandler(async function (req, res) {
     const songs = await Song.findAll();
@@ -31,18 +26,10 @@ router.get('/:id/delete', asyncHandler(async function (req, res) {
     const id = req.params.id;
     const songId = Number(id);
     const song = await Song.findById(songId);
-    return res.json(songId)
+    return res.json(song)
 
 }));
 
-router.post('/:id/delete', asyncHandler(async function (req, res) {
-    console.log('HITTING')
-    const id = req.params.id;
-    const songId = Number(id);
-    const song = await Song.findByPk(songId);
-    await song.destroy();
-    return res.json({song})
-}));
 
 
 router.post(
@@ -68,6 +55,13 @@ router.put('/:id', asyncHandler(async function (req, res) {
     return res.json(updatedSong);
 }));
 
+router.delete('/:id/delete', asyncHandler(async function (req, res) {
+    console.log('HITTING')
+    const songId = parseInt(req.params.id, 10)
+    const song = await Song.findByPk(songId);
+    const deletedSong = await song.destroy();
+    return res.json(deletedSong)
+}));
 
 router.post('/:id/edit', asyncHandler(async function (req, res) {
     const songs = await Song.findAll();
@@ -77,21 +71,21 @@ router.post('/:id/edit', asyncHandler(async function (req, res) {
 
 
 
-router.post(
-    '/home', requireAuth,
-    asyncHandler(async function (req, res, next) {
-        const { title, userId } = req.body;
+// router.post(
+//     '/home', requireAuth,
+//     asyncHandler(async function (req, res, next) {
+//         const { title, userId } = req.body;
 
-        const song = await db.Song.build({
-            userId,
-            title,
-            url,
-            duration
-        })
-        await song.save();
+//         const song = await db.Song.build({
+//             userId,
+//             title,
+//             url,
+//             duration
+//         })
+//         await song.save();
 
-        return res.json({ song })
-    })
-);
+//         return res.json({ song })
+//     })
+//     );
 
-module.exports = router;
+    module.exports = router;

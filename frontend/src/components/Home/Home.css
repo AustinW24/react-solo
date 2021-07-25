@@ -10,7 +10,6 @@
 
 .eachPhoto {
     display: flex;
-    border: 5px white;
     margin: 25px;
     height: 150px;
     width: 180px;
@@ -29,19 +28,26 @@
 .songText {
     display: flex;
     border: 2px solid red;
-    width: 650px;
+    width: 100vh;
     justify-content:flex-start;
-
+    margin-left: 0;
 }
 
 .titleDuration {
-    display: flex;
+display: flex;
 border: 2px solid red;
-justify-items: flex-start;
+margin-left: 0;
 }
 
 .editTitle {
-    border: red 2px solid
+    border: red 2px solid;
+    margin-left: 0;
+}
+
+.bin {
+    height: 15px;
+    width: 15px;
+    border-radius: 10px;
 }
 /* .duration {
     float: right;

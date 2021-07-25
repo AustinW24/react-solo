@@ -7,6 +7,10 @@
 	height: 60px;
 	background: rgb(0, 0, 0);
 	border: 10px ;
+	position: sticky;
+	top: 0;
+	width: 100%;
+	overflow: hidden;
 	/* justify-content: space-between; */
 
 
@@ -24,17 +28,56 @@
     list-style-type:none;
     padding:0;
     justify-content:flex-end;
+	position: absolute;
 
 }
 
-login-signup {
-	border: 5px solid blue;
+.home {
+	color: white;
+	position: relative;
+	margin-left: 120px;
+	font-style: normal;
+	font-size: 18px;
+}
+
+.home:hover {
+	color: rgb(133, 127, 127);
+	outline: none;
+}
+
+.signup {
+	color: white;
+	font-style: normal;
+	padding: 15px;
+	font-size: 10px;
+}
+
+.createAccount {
+	padding: 4px;
+	border-radius: 5px;
+	width: 120px;
+	background-color: rgb(251, 59, 0)
+}
+
+.createAccount:hover {
+	cursor: pointer;
+    border: 2px solid rgb(43, 42, 42);
+	background-color: rgb(248, 73, 20)
 }
 
 .navLinks {
 	display: flex;
 	border: 3px solid red;
-	width: 200px;
 	height: 40px;
+	width: 100%;
+}
 
+a {
+	text-decoration: none;
+}
+
+.signup-login {
+	position: relative;
+	margin-right: 5px;
+	gap: 15px;
 }

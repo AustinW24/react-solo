@@ -8,15 +8,14 @@
 
 .form {
     display: flex;
-    position: fixed;
-    top: 0;
+    position: absolute;
+    top: 30%;
     border: 5px solid red;
     display: flex;
-    align-items: center;
-    /* width: 200vh; */
-    height: 100vh;
+    height: 50vh;
     background: rgb(238, 180, 180) 0.5;
-    justify-content: center;
+
+
 }
 
 /* .input-field{

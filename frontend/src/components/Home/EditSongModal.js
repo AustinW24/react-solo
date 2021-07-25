@@ -10,7 +10,7 @@ function EditSongModal({song}) {
 
     return (
         <>
-            <a className='editTitle' onClick={() => setShowModal(true)}>Edit Title</a>
+            <a className='editTitle' onClick={() => setShowModal(true)}>Edit Song</a>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
                     <EditSong setShowModal={setShowModal}song={song} />
