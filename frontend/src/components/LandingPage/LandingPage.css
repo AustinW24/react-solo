@@ -41,14 +41,16 @@
 	height: 18px;
 	width: 18px;
 	position: relative;
-	margin-right: 5px;
+	margin-right: 55px;
 	border-radius: 8px;
+
 }
 
 .appleLine {
 	display: flex;
 	flex-direction:row;
-	
+	flex-wrap: wrap;
+	margin-left: 5px;
 }
 
 
@@ -62,6 +64,7 @@
 	margin-bottom: 120px;
 	z-index: 0;
 	border-radius: 8px;
+
 
 }
 .appText {
