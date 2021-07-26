@@ -15,6 +15,8 @@ function RemoveSong({ song, setShowModal }) {
         setShowModal(false);
     };
 
+
+
     return (
         <div className='deleteModalContainer'>
             <form onSubmit={handleSubmit}>
@@ -22,7 +24,7 @@ function RemoveSong({ song, setShowModal }) {
                     Are you sure you want to delete this?
                 </label>
 
-                <button type="submit" className='deleteUpload' >{'   '}Delete Upload</button>
+                <button type="submit"  className='deleteUpload' >{'   '}Delete Upload</button>
             </form >
         </div>
     );

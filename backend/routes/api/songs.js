@@ -10,23 +10,8 @@ router.get('/home', asyncHandler(async function (req, res) {
 }));
 
 
-// router.get('/', asyncHandler(async function (req, res) {
-//     const songs = await Song.findAll();
-//     res.json(songs);
-// }));
-
-
-// router.get('/:id/delete', asyncHandler(async function (req, res) {
-//     const id = req.params.id;
-//     const songId = Number(id);
-//     const song = await Song.findById(songId);
-//     return res.json(song)
-
-// }));
-
 router.post(
     '/upload', asyncHandler(async function (req, res, next) {
-
         const song = await Song.create(req.body)
         res.json(song);
     })
@@ -41,10 +26,9 @@ router.put('/:id', asyncHandler(async function (req, res) {
 }));
 
 router.delete('/home', asyncHandler(async function (req, res) {
-    console.log(req.params.id)
-    const songId = parseInt(req.body.id)
-    const song = await Song.findByPk(songId);
-    const deletedSong = await song.destroy();
+    const songId = parseInt(req.params.id)
+    // const song = await Song.findByPk(songId);
+    const deletedSong = await song.destroy({where: {id: songId}});
     return res.json(deletedSong)
 }));
 

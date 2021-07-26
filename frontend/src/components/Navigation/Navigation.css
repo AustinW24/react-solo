@@ -72,7 +72,7 @@
 	font-style: none;
 }
 
-uploadLink:hover {
+.uploadLink:hover {
 	cursor: pointer;
 	color: rgb(194, 178, 178);
 }

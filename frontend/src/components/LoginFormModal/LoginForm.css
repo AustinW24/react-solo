@@ -12,7 +12,7 @@
     width: 400px;
     max-height: 800px !important;
     max-width: 300px;
-    background-color: white;
+    background: url(https://www.maxpixel.net/static/photo/1x/Website-Background-Professional-Gradient-1761190.jpg);
     border-radius: 6px;
 }
 
@@ -21,6 +21,7 @@
     width: 65px;
     border-radius: 3px;
     background-color: black;
+    color: white;
 }
 
 .signIn:hover {
@@ -30,11 +31,19 @@
 }
 
 .loginText {
+    border-radius: 3px;
+    padding: 2px;
+    color: white;
+    font-weight: bold;
+}
 
+.loginText:hover {
+    cursor: pointer;
 }
 
 .passwordInput {
-
+    border-radius: 3px;
+    padding: 2px;
 }
 
 /* .input-field {

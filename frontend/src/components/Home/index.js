@@ -1,17 +1,34 @@
 import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux';
+import { NavLink } from 'react-router-dom'
+import ProfileButton from '../Navigation/ProfileButton'
 import './Home.css'
 import { getSongs } from '../../store/songs'
 import EditSongModal from './EditSongModal'
 import RemoveSongModal from '../RemoveSong/RemoveSongModal'
+import LoginFormModal from '../LoginFormModal'
 import soundwave from "./soundwave.PNG"
 
 function Home() {
 
     const dispatch = useDispatch();
-
     const songs = useSelector((state) => Object.values(state.songs))
+    const sessionUser = useSelector(state => state.session.user);
+
+    let sessionLinks;
+    if (sessionUser) {
+      sessionLinks = (
+        <ProfileButton user={sessionUser} />
+      );
+    } else {
+      sessionLinks = (
+        <>
+          <LoginFormModal />
+          <NavLink className='signup' to="/signup"><button className='createAccount'>Create account</button></NavLink>
+        </>
+      );
+    }
+
 
     useEffect(() => {
         dispatch(getSongs())
