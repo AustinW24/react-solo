@@ -9,6 +9,7 @@ import Home from "./components/Home";
 import EditSongModal from "./components/Home/EditSongModal";
 import UploadPage from "./components/UploadPage";
 import SinglePost from './components/SinglePost'
+import RemoveSongModal from "./components/RemoveSong/RemoveSongModal";
 
 function App() {
   const dispatch = useDispatch();
@@ -28,12 +29,14 @@ function App() {
           <Route path="/home">
             <Home />
             <EditSongModal />
+            <RemoveSongModal />
           </Route>
           <Route path="/signup">
             <SignupFormPage />
           </Route>
           <Route path='/upload'>
             <UploadPage />
+
           </Route>
           <Route path='/:id/delete'>
             <SinglePost />

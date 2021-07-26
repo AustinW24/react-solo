@@ -29,9 +29,10 @@ function LoginForm() {
             <li key={idx}>{error}</li>
           ))}
         </ul>
-        <label>
-          Username or Email
-          <input className='input-field'
+        <label className='userEmailInput'>
+          <input
+          placeholder="username or email"
+          className='input-field'
             type="text"
             value={credential}
             onChange={(e) => setCredential(e.target.value)}
@@ -39,15 +40,17 @@ function LoginForm() {
           />
         </label>
         <label>
-          Password
+         
           <input
+          placeholder='password'
+          className='passwordInput'
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
         </label>
-        <a type="submit" href='/home'>Log In</a>
+        <a type="submit" href='/home' className='loginText'>Sign In</a>
       </form >
     </div>
   );

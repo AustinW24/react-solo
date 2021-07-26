@@ -40,6 +40,19 @@ const validateSignup = [
     }),
   );
 
+  router.post(
+    '/home/signup',
+    validateSignup,
+    asyncHandler(async (req, res) => {
+      const { email, password, username } = req.body;
+      const user = await User.signup({ email, username, password });
+      await setTokenCookie(res, user);
+      return res.json({
+        user,
+      });
+    }),
+  );
+
   router.get('/home', asyncHandler(async function (_req, res) {
     const users = await User.findAll();
     return res.json(users)

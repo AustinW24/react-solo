@@ -1,7 +1,6 @@
 const express = require("express");
 const asyncHandler = require("express-async-handler");
 const router = express.Router();
-const { requireAuth } = require('../../utils/auth');
 const { Song } = require('../../db/models');
 
 
@@ -11,42 +10,28 @@ router.get('/home', asyncHandler(async function (req, res) {
 }));
 
 
-router.get('/', asyncHandler(async function (req, res) {
-    const songs = await Song.findAll();
-    res.json(songs);
-}));
-
-// router.get('/upload', asyncHandler(async function (req, res) {
+// router.get('/', asyncHandler(async function (req, res) {
 //     const songs = await Song.findAll();
-
 //     res.json(songs);
 // }));
 
-router.get('/:id/delete', asyncHandler(async function (req, res) {
-    const id = req.params.id;
-    const songId = Number(id);
-    const song = await Song.findById(songId);
-    return res.json(song)
 
-}));
+// router.get('/:id/delete', asyncHandler(async function (req, res) {
+//     const id = req.params.id;
+//     const songId = Number(id);
+//     const song = await Song.findById(songId);
+//     return res.json(song)
 
-
+// }));
 
 router.post(
-    '/upload', requireAuth,
-    asyncHandler(async function (req, res, next) {
-        const { title, userId, url, duration } = req.body;
+    '/upload', asyncHandler(async function (req, res, next) {
 
-        const song = await db.Song.build({
-            userId,
-            title,
-            url,
-            duration
-        })
-        await song.save();
-        return res.json({ song })
+        const song = await Song.create(req.body)
+        res.json(song);
     })
 );
+
 
 router.put('/:id', asyncHandler(async function (req, res) {
     const songId = parseInt(req.params.id, 10)
@@ -55,9 +40,9 @@ router.put('/:id', asyncHandler(async function (req, res) {
     return res.json(updatedSong);
 }));
 
-router.delete('/:id/delete', asyncHandler(async function (req, res) {
-    console.log('HITTING')
-    const songId = parseInt(req.params.id, 10)
+router.delete('/home', asyncHandler(async function (req, res) {
+    console.log(req.params.id)
+    const songId = parseInt(req.body.id)
     const song = await Song.findByPk(songId);
     const deletedSong = await song.destroy();
     return res.json(deletedSong)
@@ -65,27 +50,9 @@ router.delete('/:id/delete', asyncHandler(async function (req, res) {
 
 router.post('/:id/edit', asyncHandler(async function (req, res) {
     const songs = await Song.findAll();
-    console.log('songsssss', songs)
     res.json(songs);
 }));
 
 
-
-// router.post(
-//     '/home', requireAuth,
-//     asyncHandler(async function (req, res, next) {
-//         const { title, userId } = req.body;
-
-//         const song = await db.Song.build({
-//             userId,
-//             title,
-//             url,
-//             duration
-//         })
-//         await song.save();
-
-//         return res.json({ song })
-//     })
-//     );
 
     module.exports = router;

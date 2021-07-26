@@ -1,8 +1,8 @@
 .container {
-    box-sizing: border-box;
+	box-sizing: border-box;
 	max-height: 100%;
-    max-width: 100%;
-    margin: 0 auto;
+	max-width: 100%;
+	margin: 0 auto;
 	background-image: url(./19609.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -21,17 +21,16 @@
 	align-self: center;
 	font-size: 40px;
 	height: 5px;
-    text-shadow: 0 0 10px blue;
+	text-shadow: 0 0 10px blue;
 	color: white;
 	font-family: "Helvetica Neue";
-
 }
 
 .caption {
 	display: flex;
 	flex-direction: column;
 	font-family: "Helvetica Neue";
-    text-shadow: 0 0 10px blue;
+	text-shadow: 0 0 10px blue;
 	color: white;
 	position: relative;
 	margin-top: 50px;
@@ -41,22 +40,20 @@
 	height: 18px;
 	width: 18px;
 	position: relative;
-	margin-right: 55px;
-	border-radius: 8px;
-
+	margin-right: 40px;
+	border-radius: 15px;
+	right: -40px;
 }
 
 .appleLine {
 	display: flex;
-	flex-direction:row;
-	flex-wrap: wrap;
-	margin-left: 5px;
+	left: -20px;
 }
 
 
 .glow-on-hover {
-	width: 220px;
-	height: 40px;
+	width: 170px;
+	height: 55px;
 	color: black;
 	background-color: black;
 	cursor: pointer;
@@ -64,27 +61,19 @@
 	margin-bottom: 120px;
 	z-index: 0;
 	border-radius: 8px;
-
-
+	justify-content: center;
 }
 .appText {
 	font-size: 15px;
 	padding: 4px 6px 3px 6px;
-	font-family: 'Book Antiqua';
+	font-family: "Book Antiqua";
 	color: black;
 	font-weight: bold;
 }
 
 .glow-on-hover:before {
 	content: "";
-	background: linear-gradient(
-		45deg,
-		#24b8c5,
-		#f0f0f0,
-		#102dd1,
-		#008cff
-
-	);
+	background: linear-gradient(45deg, #24b8c5, #f0f0f0, #102dd1, #008cff);
 	position: absolute;
 	top: -2px;
 	left: -2px;
@@ -141,7 +130,7 @@
 	flex-direction: row;
 	flex-wrap: nowrap;
 	align-items: stretch;
-    margin-bottom: auto;
+	margin-bottom: auto;
 }
 
 .column1 .column2 .column3 {
@@ -157,26 +146,26 @@
 	max-width: 150px;
 	padding: 6px;
 	align-self: center;
-    box-shadow: inset 0 0 5px 2px;
-    border-radius: 100px;
+	box-shadow: inset 0 0 5px 2px;
+	border-radius: 100px;
 	color: white;
 }
 
 .musicIcon {
-    display: flex;
+	display: flex;
 	max-height: 140px;
 	max-width: 150px;
 	padding: 6px;
 	align-self: center;
-    box-shadow: inset 0 0 5px 2px;
-    border-radius: 80px;
+	box-shadow: inset 0 0 5px 2px;
+	border-radius: 80px;
 	color: white;
 }
 
 .h1Caption {
 	display: flex;
 	justify-content: center;
-    color: white;
+	color: white;
 	font-size: 22px;
 }
 
@@ -185,9 +174,9 @@
 	justify-content: center;
 	max-width: 190px;
 	padding: 12px;
-    font-size: 18px;
+	font-size: 18px;
 	color: white;
-    text-shadow: 0 0 10px black;
+	text-shadow: 0 0 10px black;
 }
 
 /* .trackingIcon {

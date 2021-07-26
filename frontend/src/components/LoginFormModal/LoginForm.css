@@ -8,10 +8,12 @@
 .modalContainer {
     display: flex;
     justify-content: center;
-    height: 100px;
-    max-height: 600px !important;
-    max-width: 200px;
+    height: 200px;
+    width: 400px;
+    max-height: 800px !important;
+    max-width: 300px;
     background-color: white;
+    border-radius: 6px;
 }
 
 .signIn {
@@ -25,6 +27,14 @@
     cursor: pointer;
     border: 1px solid rgb(105, 102, 102);
     background-color:rgb(53, 52, 52)
+}
+
+.loginText {
+
+}
+
+.passwordInput {
+
 }
 
 /* .input-field {

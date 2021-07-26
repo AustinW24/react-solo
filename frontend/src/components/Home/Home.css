@@ -11,8 +11,12 @@
 .eachPhoto {
     display: flex;
     margin: 25px;
-    height: 150px;
+    min-height: 180px;
+    height: 180px;
+    max-height: 180px;
+    min-width: 180px;
     width: 180px;
+    max-width: 180px;
     box-shadow: 5px 5px 10px 0px #000000;
     /* background-size: 100% 100%; */
 }
@@ -21,13 +25,12 @@
 .imgText {
     display: flex;
     align-content: flex-start;
-    margin: 10px;
     align-items: flex-start;
 }
 
 .songText {
     display: flex;
-    border: 2px solid red;
+
     width: 100vh;
     justify-content:flex-start;
     margin-left: 0;
@@ -35,20 +38,36 @@
 
 .titleDuration {
 display: flex;
-border: 2px solid red;
+font-size: 24px;
 margin-left: 0;
+font-weight: bold;
 }
 
 .editTitle {
-    border: red 2px solid;
     margin-left: 0;
 }
 
 .bin {
     height: 15px;
     width: 15px;
-    border-radius: 10px;
+    border-radius: 25px;
+    display: flex;
+    margin-left: 1px;
 }
+
+.binButton {
+    border-radius: 30px;
+    height: 10px;
+    width: 10px;
+}
+
+/* .soundwave {
+    width: 60px;
+    height: 60px;
+    background-image: url(./soundwave.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+} */
 /* .duration {
     float: right;
     margin-right: 50px

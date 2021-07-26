@@ -1,3 +1,4 @@
+import { csrfFetch } from './csrf.js'
 export const LOAD_SONG = "song/LOAD_SONG";
 export const REMOVE_SONG = "song/REMOVE_SONG";
 export const ADD_SONG = "song/ADD_SONG";
@@ -34,8 +35,8 @@ export const getSongs = () => async (dispatch) => {
 
 
 export const addSong = (song) => async (dispatch) => {
-  const response = await fetch(`/api/songs/upload`, {
-    method: 'POST',
+  const response = await csrfFetch(`/api/songs/upload`, {
+    method: 'post',
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(song)
   })
@@ -48,7 +49,6 @@ export const addSong = (song) => async (dispatch) => {
 
 
 export const editSong = (song) => async (dispatch) => {
-  console.log('*************************************************', song);
   const response = await fetch(`/api/songs/${song.id}`, {
     method: 'PUT',
     headers: { "Content-Type": "application/json" },
@@ -62,16 +62,14 @@ export const editSong = (song) => async (dispatch) => {
 }
 
 export const removeSong = (song) => async (dispatch) => {
-  const response = await fetch(`api/${song.id}/delete`, {
-    method: 'DELETE',
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(song)
+
+  const response = await csrfFetch('api/songs/home', {
+    method: 'delete',
   })
   if (response.ok) {
-    const deletedSong = await response.json();
-    dispatch(remove(deletedSong));
-    return deletedSong
+    dispatch(remove(song));
   }
+  return response
 }
 
 

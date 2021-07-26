@@ -21,8 +21,8 @@
 	background-image: url("https://wallpapers-hub.art/wallpaper-images/52279.jpg");
 	background-size: 100% 100%;
 	opacity: 0.85;
-	border-radius: 14px;
-	border: 3px solid white;
+	border-radius: 6px;
+	border: 2px solid white;
 }
 
 input:focus {
@@ -31,7 +31,7 @@ input:focus {
 }
 
 input.visited {
-	color: red;
+	color: white;
 	outline: 2px solid orange;
 }
 
@@ -45,12 +45,8 @@ form {
 
 }
 
-.trackTitle {
-	padding: 5px;
-}
-
-.trackCover {
-	padding: 5px;
+.editTitle {
+	font-size: 12px;
 }
 
 a {

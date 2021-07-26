@@ -9,6 +9,7 @@ function LandingPage() {
                 <div className='title'> Your music app</div>
                 <div className='caption'>Relax or get going with some of your favorite listens
                 </div>
+                <div className='buttonContent'>
                 <button className='glow-on-hover'>
                     <p className='appText'>Download on</p>
                     <div className='appleLine'>
@@ -27,6 +28,7 @@ function LandingPage() {
                         <p className='appText'>the App store</p>
                     </div>
                 </button>
+                </div>
             </div>
             <div className='footer'>
                 <div className='column1'>

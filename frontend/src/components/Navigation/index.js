@@ -31,6 +31,7 @@ function Navigation({ isLoaded }) {
       <div className='navLinks'>
       < NavLink exact to="/home" className='home'>Home</NavLink>
       <div className='signup-login'>
+        <a className='uploadLink' href='/upload'>Upload</a>
         {isLoaded && sessionLinks}
         </div>
       </div>
