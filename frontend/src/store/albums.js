@@ -8,20 +8,20 @@ const load = (albumId) => ({
     albumId
   });
 
-  const update = (albumId) => ({
-    type: UPDATE_ALBUM,
-    albumId
-  });
+  // const update = (albumId) => ({
+  //   type: UPDATE_ALBUM,
+  //   albumId
+  // });
 
-  const add = (albumId) => ({
-    type: ADD_ALBUM,
-    albumId
-  });
+  // const add = (albumId) => ({
+  //   type: ADD_ALBUM,
+  //   albumId
+  // });
 
-  const remove = (albumId) => ({
-    type: REMOVE_ALBUM,
-    albumId,
-  });
+  // const remove = (albumId) => ({
+  //   type: REMOVE_ALBUM,
+  //   albumId,
+  // });
 
   export const fetchAlbum = (id) => async (dispatch) => {
     const res = await fetch(`/api/albums/${id}`);

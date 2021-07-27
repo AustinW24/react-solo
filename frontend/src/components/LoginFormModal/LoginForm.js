@@ -16,6 +16,7 @@ function LoginForm() {
       async (res) => {
         const data = await res.json();
         if (data && data.errors) setErrors(data.errors);
+
       }
     );
   };
@@ -28,9 +29,10 @@ function LoginForm() {
             <li key={idx}>{error}</li>
           ))}
         </ul>
-        <label>
-          Username or Email
+        <label className='userEmailInput'>
           <input
+          placeholder="username or email"
+          className='input-field'
             type="text"
             value={credential}
             onChange={(e) => setCredential(e.target.value)}
@@ -38,15 +40,17 @@ function LoginForm() {
           />
         </label>
         <label>
-          Password
+         
           <input
+          placeholder='password'
+          className='passwordInput'
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
         </label>
-        <button type="submit">Log In</button>
+        <a type="submit" href='/home' className='loginText'>Sign In</a>
       </form >
     </div>
   );

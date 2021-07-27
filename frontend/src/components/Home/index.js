@@ -1,32 +1,56 @@
-import { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import { NavLink, Route, useParams } from 'react-router-dom';
-import { useDispatch } from 'react-redux'
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { NavLink } from 'react-router-dom'
+import ProfileButton from '../Navigation/ProfileButton'
 import './Home.css'
+import { getSongs } from '../../store/songs'
+import EditSongModal from './EditSongModal'
+import RemoveSongModal from '../RemoveSong/RemoveSongModal'
+import LoginFormModal from '../LoginFormModal'
+import soundwave from "./soundwave.PNG"
 
 function Home() {
 
-    // const songs = useSelector(state => {
-    //     return state.songs.list.map(songId => state.songs[songId]);
-    //   });
+    const dispatch = useDispatch();
+    const songs = useSelector((state) => Object.values(state.songs))
+    const sessionUser = useSelector(state => state.session.user);
+
+    let sessionLinks;
+    if (sessionUser) {
+      sessionLinks = (
+        <ProfileButton user={sessionUser} />
+      );
+    } else {
+      sessionLinks = (
+        <>
+          <LoginFormModal />
+          <NavLink className='signup' to="/signup"><button className='createAccount'>Create account</button></NavLink>
+        </>
+      );
+    }
+
+
+    useEffect(() => {
+        dispatch(getSongs())
+    }, [dispatch])
+
+
 
     return (
-        <div className='homeContainer'>
-            <script src="https://connect.soundcloud.com/sdk/sdk-3.3.2.js"></script>
-            <script>
-                {SC.initialize({
-                    client_id: 'YOUR_CLIENT_ID',
-                redirect_uri: 'https://example.com/callback'
-  })};
-            </script>
-            <div className='latestDiv'>
-                <img className='recordImg' src='https://s3.cointelegraph.com/storage/uploads/view/12aaeaf78ca47c94da141ef52c84e485.png'></img>
-                <h1 className='latestText'>Latest from people you follow</h1>
-            </div>
-            <div className='uploadContainer'></div>
-        </div>
 
+        <div className='homeContainer'>
+            {songs.map((song) =>
+                <div className='imgText' key={song.id}>
+                    <img src={song.url} className='eachPhoto' alt='song-art'></img>
+                    <div className='songText'>
+                    <p className='titleDuration'>{song.title} </p>
+                        <EditSongModal  song={song} />
+                        <img src={soundwave}></img>
+                        <RemoveSongModal song={song} />
+                    </div>
+                </div>
+            )}
+        </div>
     )
 }
-
 export default Home

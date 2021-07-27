@@ -31,3 +31,5 @@ router.get('/home', asyncHandler(async function (_req, res) {
     const albums = await Album.findAll();
     res.json(songs)
 }));
+
+module.exports = router
