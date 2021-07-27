@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+    margin: auto;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.modalContainer {
+    display: flex;
+    justify-content: center;
+    height: 200px;
+    width: 400px;
+    max-height: 800px !important;
+    max-width: 300px;
+    background: url(https://www.maxpixel.net/static/photo/1x/Website-Background-Professional-Gradient-1761190.jpg);
+    border-radius: 6px;
+}
+
+.signIn {
+    padding: 4px;
+    width: 65px;
+    border-radius: 3px;
+    background-color: black;
+    color: white;
+}
+
+.signIn:hover {
+    cursor: pointer;
+    border: 1px solid rgb(105, 102, 102);
+    background-color:rgb(53, 52, 52)
+}
+
+.loginText {
+    border-radius: 3px;
+    padding: 2px;
+    color: white;
+    font-weight: bold;
+}
+
+.loginText:hover {
+    cursor: pointer;
+}
+
+.passwordInput {
+    border-radius: 3px;
+    padding: 2px;
+}
+
+/* .input-field {
+background-color: #eee;
+border: none;
+padding: 12px 15px;
+margin: 8px 0;
+width: 30%;
+margin-left: 10%;
+} */

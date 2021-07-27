@@ -1,0 +1,83 @@
+* {
+	box-sizing: border-box;
+	margin: auto;
+	padding: 0;
+	font-family: "Poppins", sans-serif;
+}
+
+.songModalContainer {
+	position: fixed;
+	display: flex;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 550px;
+	max-width: 100%;
+	height: 400px;
+	max-height: 100%;
+	padding: 20px 50px 20px 20px;
+	/* let it scroll */
+	overflow: auto;
+	background-image: url("https://wallpapers-hub.art/wallpaper-images/52279.jpg");
+	background-size: 100% 100%;
+	opacity: 0.85;
+	border-radius: 6px;
+	border: 2px solid white;
+}
+
+input:focus {
+	color: white;
+	outline: 2px solid rgb(214, 146, 20);
+}
+
+input.visited {
+	color: white;
+	outline: 2px solid orange;
+}
+
+form {
+	display: flex;
+	position: relative;
+	margin-top: 80px;
+	flex-direction: column;
+	justify-content: center;
+	gap: 12px;
+
+}
+
+.editTitle {
+	font-size: 12px;
+}
+
+a {
+	font-style: italic;
+	font-size: 14px;
+}
+
+.confirm:hover {
+	cursor: pointer;
+}
+
+.confirm {
+	color: black;
+	font-size: 13px;
+	border-radius: 6px;
+	padding: 5px;
+}
+
+.editTitle:hover {
+	cursor: pointer;
+}
+
+.confirm:hover {
+	cursor: pointer;
+}
+
+.songText {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	white-space: nowrap;
+	margin-top: 30px;
+	margin-right: 500px;
+}
