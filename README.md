@@ -4,6 +4,12 @@ SoundSpace is an website/app that is mirrored after the music Platform Soundclou
 
 ![image](https://user-images.githubusercontent.com/67086515/127363854-a48dac48-82f2-4d0f-810a-0eb47f1d7e85.png)
 
+**Bugs**
+No Demo User
+Authentication not functional
+Username for creating uploads takes in a user Id
+
+
 Future plans include:
   - Continuous Playbar for audio files
   - Creating a profile page and allowing users to follow each other
