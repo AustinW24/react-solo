@@ -9,9 +9,7 @@ function EditSong({ song, setShowModal }) {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [url, setUrl] = useState('');
-
   const [inputColor, setInputColor] = useState('black');
-
   const onChange = (e) => {
     setInputColor((inputColor === 'black' ? '#FFFFFF' : '#FFFFFF'));
  }

@@ -1,12 +1,29 @@
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+
+import { useDispatch } from "react-redux";
+import { useParams, useHistory } from 'react-router';
+import { csrfFetch } from '../.././store/csrf';
 import './RemoveSong.css';
 import { removeSong } from '../../store/songs'
 
 
-function RemoveSong({ song, setShowModal }) {
+const RemoveSong = async ({ song, setShowModal }) => {
 
     const dispatch = useDispatch();
+    const history = useHistory();
+    const songId = useParams().id;
+
+
+    const res = await csrfFetch(`/api/home`, {
+        method: 'DELETE',
+    });
+
+    if(res.ok) {
+        history.push('/listings');
+        dispatch(removeSong(songId));
+        setShowModal(false);
+    };
+
+
 
     const handleSubmit = async (e) => {
 

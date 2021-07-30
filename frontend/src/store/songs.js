@@ -64,12 +64,12 @@ export const editSong = (song) => async (dispatch) => {
 export const removeSong = (song) => async (dispatch) => {
 
   const response = await csrfFetch('api/songs/home', {
-    method: 'delete',
+    method: 'DELETE',
   })
   if (response.ok) {
+
     dispatch(remove(song));
   }
-  return response
 }
 
 

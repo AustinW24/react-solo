@@ -33,9 +33,9 @@ const UploadPage = () => {
             url,
         }
         const song = await dispatch(addSong(payload))
-            if(song) {
-                history.push('/home')
-            }
+        if (song) {
+            history.push('/home')
+        }
     };
 
 
@@ -45,11 +45,11 @@ const UploadPage = () => {
                 <div className='postContainer'>
                     <form onSubmit={handleSubmit}>
                         <label>Username </label>
-                        <input  onChange={updateUserId} placeholder='Username..' className='userId' type='text'></input>
+                        <input onChange={updateUserId} placeholder='User Id..' className='userId' type='text'></input>
                         <label>Track Title </label>
-                        <input  onChange={updateTitle} placeholder='Name of track..' className='trackTitleUpload' type='text'></input>
+                        <input onChange={updateTitle} placeholder='Name of track..' className='trackTitleUpload' type='text'></input>
                         <label>Cover Art </label>
-                        <input  onChange={updateUrl} placeholder='URL image..' className='coverArt' type='text'></input>
+                        <input onChange={updateUrl} placeholder='URL image..' className='coverArt' type='text'></input>
                         <label className='dragAndDrop'>Drag and drop your tracks & albums here </label>
                         <button className='uploadButton'>or choose files to upload</button>
                         <button type='submit' className='uploadSubmitButton'>Submit</button>
