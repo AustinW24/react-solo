@@ -7,6 +7,7 @@ SoundSpace is an website/app that is mirrored after the music Platform Soundclou
 **Bugs**
 - No Demo User
 - Authentication not functional
+- Deleting Uploads not functional
 - Username for creating uploads takes in a user Id
 
 
